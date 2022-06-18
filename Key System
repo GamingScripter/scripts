@@ -1,0 +1,91 @@
+local DarkraiX = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Submit = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local KeySystemText = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local KeySystem = Instance.new("Frame")
+local UICorner_4 = Instance.new("UICorner")
+local EnterKey = Instance.new("TextBox")
+local UICorner_5 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local UICorner_6 = Instance.new("UICorner")
+local Submit = Instance.new("TextButton")
+
+DarkraiX.Name = "DarkraiX"
+DarkraiX.Parent = game.CoreGui
+DarkraiX.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    
+Frame.Name = "Frame"
+Frame.Parent = DarkraiX
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BackgroundTransparency = 1.000
+Frame.Position = UDim2.new(0, 200, 0, 30)
+Frame.Size = UDim2.new(0, 400, 0, 250)
+    
+KeySystem.Name = "Key System"
+KeySystem.Parent = Frame
+KeySystem.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+KeySystem.Position = UDim2.new(0.338613868, 0, 0.32911393, 0)
+KeySystem.Size = UDim2.new(0, 326, 0, 197)
+KeySystem.Active = true
+KeySystem.Draggable = true
+
+UICorner_2.Parent = KeySystem
+
+KeySystemText.Name = "Key System Text"
+KeySystemText.Parent = KeySystem
+KeySystemText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KeySystemText.BackgroundTransparency = 0.900
+KeySystemText.Position = UDim2.new(0.192401156, 0, -0.000835283136, 0)
+KeySystemText.Size = UDim2.new(0, 201, 0, 31)
+KeySystemText.Font = Enum.Font.SourceSansBold
+KeySystemText.Text = "Key System"
+KeySystemText.TextColor3 = Color3.fromRGB(105,105,105)
+KeySystemText.TextSize = 35.000
+
+UICorner_3.Parent = KeySystemText
+
+EnterKey.Name = "Enter   Key"
+EnterKey.Parent = KeySystem
+EnterKey.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+EnterKey.Position = UDim2.new(0.193251535, 0, 0.472081184, 0)
+EnterKey.Size = UDim2.new(0, 200, 0, 39)
+EnterKey.Font = Enum.Font.SourceSans
+EnterKey.Text = ""
+EnterKey.TextColor3 = Color3.fromRGB(0, 100, 0)
+EnterKey.TextSize = 14.000
+
+UICorner_4.Parent = EnterKey
+
+TextLabel.Parent = KeySystem
+TextLabel.BackgroundColor3 = Color3.fromRGB(105,105,105)
+TextLabel.Position = UDim2.new(0.291411042, 0, 0.258883238, 0)
+TextLabel.Size = UDim2.new(0, 136, 0, 32)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Enter Key!"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 30.000
+
+UICorner_5.Parent = TextLabel
+
+Submit.Name = "Submit"
+Submit.Parent = KeySystem
+Submit.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Submit.Position = UDim2.new(0.282208592, 0, 0.715736032, 0)
+Submit.Size = UDim2.new(0, 142, 0, 36)
+Submit.Font = Enum.Font.SourceSans
+Submit.Text = "Submit"
+Submit.TextColor3 = Color3.fromRGB(169,169,169)
+Submit.TextSize = 30.000
+Submit.MouseButton1Click:Connect(function()
+	if EnterKey.Text == "Key" then
+        wait(0.1)
+        game.CoreGui:FindFirstChild("DarkraiX"):Destroy()
+		print("correct key")
+	  else
+        print("wrong key")
+	end
+end)
+
+UICorner_6.Parent = Submit

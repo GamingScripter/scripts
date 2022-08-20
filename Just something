@@ -1,0 +1,41 @@
+const Discord = require("discord.js")
+const fs = require("fs")
+
+const { Client, GatewayIntentBits, Partials, Collection } = require("discord.js");
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildPresence,
+    GatewayIntentBits.GuildMessageReactions,
+    GatewayIntentBits.DirectMessages,
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.MessageContent,
+  ],
+  partials: [
+    Partials.Channel,
+    Partials.Message,
+    Partials.User,
+    Partials.GuildMember,
+    Partials.Reaction
+  ]
+});
+
+client.once('ready', async () => { // Checks If The Bot Is Online Or Not
+  console.log(`Logged On As Bot`)
+})
+
+client.on('messageCreate', async (message) => { // Create A New Command!
+  const args = message.content
+  const command = args
+   if(command === 'Yo') {
+     message.channel.send('sup!');
+   }
+});
+
+client.login(process.env.token) // Logins In The Bot
+/*
+You Can Do This Also
+client.login('token here')
+but to keep your token safe ill suggest to use .env
+*/
